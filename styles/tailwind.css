@@ -14,7 +14,7 @@
   /* Overrides for Tailwind Typography prose class */
   .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6,
   .prose p, .prose a, .prose strong, .prose em, .prose li,
-  .prose pre code, .prose code, .prose table {
+  .prose pre code, .prose code, .prose table, .prose th, .prose td {
     @apply dark:text-white;
   }
   .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
