@@ -4,16 +4,17 @@
   "description": "A pseudo code approach to manage and automatically handle Twitch Channel Points, Twitch Chat, OBS or SLOBS, and StreamElements or Streamlabs alerts.",
   "footer": "Made with ❤ for Kruiz Control",
   "url": "https://hopeful-albattani-07c956.netlify.app/",
-  "enableGithubLink": false,
+  "enableGithubLink": true,
   "githubProjectUrl": "https://github.com/Kruiser8/Kruiz-Control",
+  "githubProjectCredit": "Kruizer8",
   "enableEditButton": true,
   "githubEditUrl": "https://github.com/FatsackFails/kruizcontrol-docs",
   "githubBranch": "main",
-  "enablePatreonLink": false,
+  "enablePatreonLink": true,
   "patreonUrl": "https://patreon.com/kruiser8",
-  "enableDiscordLink": false,
+  "enableDiscordLink": true,
   "discordUrl": "https://discord.gg/wU3ZK3Q",
-  "enableTwitterLink": false,
+  "enableTwitterLink": true,
   "twitterUrl": "https://twitter.com/kruiser8",
   "enablePageNavigation": true,
   "navigationStyle": "vertical",
@@ -22,5 +23,5 @@
   "enableSearch": true,
   "enableDarkMode": true,
   "enableDatestamp": true,
-  "enableNetlifyCMS": false
+  "enableNetlifyCMS": true
 }
