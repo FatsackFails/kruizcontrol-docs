@@ -153,7 +153,6 @@ module.exports = function(eleventyConfig) {
   let markdownItFootnote = require("markdown-it-footnote");
   let markdownItContainer = require("markdown-it-container");
   let markdownLinkifyImages = require('markdown-it-linkify-images');
-  let markdownToc = require('markdown-it-toc-done-right');
   let markdownItTasks = require('markdown-it-task-lists');
   let markdownItAttrs = require("markdown-it-attrs");
   let markdownItCenterText = require("markdown-it-center-text");
@@ -171,10 +170,6 @@ module.exports = function(eleventyConfig) {
         tokens[idx].attrPush([ 'target', '_blank' ])
         tokens[idx].attrPush([ 'rel', 'noopener noreferrer' ])
       }
-    })
-    .use(markdownToc, {
-      // https://www.npmjs.com/package/markdown-it-toc-done-right
-      "level": 2
     })
     .use(markdownItAnchor, {
       // https://www.npmjs.com/package/markdown-it-anchor
