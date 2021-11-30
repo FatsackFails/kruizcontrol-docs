@@ -80,10 +80,6 @@ module.exports = function(eleventyConfig) {
    eleventyConfig.addCollection("pages", function(collection) {
     return collection.getFilteredByGlob("pages/*.md");
    });
-   // Creates custom collection "docs"
-   eleventyConfig.addCollection("docs", function(collection) {
-    return collection.getFilteredByGlob("pages/docs/*.md");
-   });
 
    // Creates custom collection "results" for search
    const searchFilter = require("./filters/searchFilter");
