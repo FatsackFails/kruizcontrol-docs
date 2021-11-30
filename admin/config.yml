@@ -39,15 +39,16 @@ collections:
           - {label: "Meta description", name: "description", widget: "string"}
           - {label: "Site footer", name: "footer", widget: "string", required: false}
           - {label: "Site Url", name: "url", widget: "string"}
-          - {label: "Github Url", name: "githubUrl", widget: "string"}
+          - {label: "Enable Github link", name: "enableGithubLink", widget: "boolean"}
+          - {label: "Github Project Url", name: "githubProjectUrl", widget: "string"}
+          - {label: "Enable edit button", name: "enableEditButton", widget: "boolean"}
+          - {label: "Github Docs Url", name: "githubEditUrl", widget: "string"}
           - {label: "Github branch", name: "githubBranch", widget: "string"}
           - {label: "Enable page navigation", name: "enablePageNavigation", widget: "boolean", default: false}
           - {label: "Navigation style", name: "navigationStyle", widget: "string"}
           - {label: "Site emoji", name: "emoji", widget: "string", required: false}
           - {label: "Enable search", name: "enableSearch", widget: "boolean"}
           - {label: "Enable darkmode", name: "enableDarkMode", widget: "boolean"}
-          - {label: "Enable edit button", name: "enableEditButton", widget: "boolean"}
           - {label: "Enable datestamp", name: "enableDatestamp", widget: "boolean"}
-          - {label: "Enable Github link", name: "enableGithubLink", widget: "boolean"}
-          - {label: "Enable Netlify CMS", name: "enableNetlifyCMS", widget: "boolean", default: false}          
+          - {label: "Enable Netlify CMS", name: "enableNetlifyCMS", widget: "boolean", default: false}
           - {label: "Enable TOC Sidebar", name: "enableTOC", widget: "boolean", default: true}
