@@ -58,7 +58,9 @@ A small selection of actions that are included for increased usability.
 **cooldown** | The number of seconds (rounded to a whole number) left on the cooldown. This is only returned if the cooldown is active (`<name>` is True).
 **cooldown_real** | The decimal number of seconds left on the cooldown. This is only returned if the cooldown is active (`<name>` is True).
 
-_Note: The above example, `Cooldown Check MyCustomTrigger`, would return the parameter **MyCustomTrigger**._
+::: callout
+**Note:** The above example, `Cooldown Check MyCustomTrigger`, would return the parameter **MyCustomTrigger**.
+:::
 
 ***
 
