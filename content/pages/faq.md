@@ -4,7 +4,7 @@ date: Last Modified
 slug: faq
 eleventyNavigation:
   key: FAQ
-  order: 3
+  order: 4
   title: FAQ
   parent: Getting Started
 ---

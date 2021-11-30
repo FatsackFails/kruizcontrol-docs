@@ -1,12 +1,11 @@
 ---
-title: General
+title: Documentation
 date: Last Modified
-slug: general
+slug: docs
 eleventyNavigation:
-  key: General
-  order: 101
-  title: General
-  parent: Docs
+  key: Docs
+  order: 100
+  title: Documentation
 ---
 
 Trigger files are sections of triggers and actions separated by empty lines. Each trigger can be followed by 1 or more actions. Here's the general format.

@@ -4,8 +4,9 @@ date: Last Modified
 slug: settings
 eleventyNavigation:
   key: Settings
-  order: 50
+  order: 2
   title: Settings
+  parent: Getting Started
 ---
 
 The following details each of the settings files that need to be filled out for each handler. An example is provided for each file.
