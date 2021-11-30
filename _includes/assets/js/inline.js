@@ -9,7 +9,7 @@ if (window.netlifyIdentity) {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-  
+
   const el = document.getElementById("main");
   el.addEventListener("click", closeNavigation, false)
 
@@ -27,14 +27,14 @@ function logout() {
 
 function showNavigation() {
   const navigation = document.getElementById("navigation");
-  navigation.classList.remove("hidden", "sticky","pt-32"); 
-  navigation.classList.add("absolute","right-0", "top-0", "-mt-0", "z-50", "pt-0", "bg-white","border-l", "border-gray-200"); 
+  navigation.classList.remove("hidden", "sticky","pt-32");
+  navigation.classList.add("right-0", "top-0", "-mt-0", "z-50", "pt-0", "bg-white","border-l", "border-gray-200");
 }
 
 function closeNavigation() {
   const navigation = document.getElementById("navigation");
-  navigation.classList.add("hidden"); 
-  navigation.classList.remove("absolute","right-0","z-50", "bg-gray-100", "border-r", "border-gray-800" ); 
+  navigation.classList.add("hidden");
+  navigation.classList.remove("right-0","z-50", "bg-gray-100", "border-r", "border-gray-800" ); 
 }
 
 function activateDarkMode() {
@@ -58,8 +58,8 @@ function toggleLayout(state) {
     } else {
       localStorage.setItem('layout', 'horizontal')
     }
-  } 
-  
- 
+  }
+
+
   console.log(localStorage.getItem('layout'))
 }
