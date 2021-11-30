@@ -10,7 +10,7 @@ eleventyNavigation:
   parent: Docs
 ---
 
-The following parameters are always available. Use the `_successful_` and `_unsuccessful_` parameters to test that the <a href="https://github.com/Kruiser8/Kruiz-Control/blob/master/settings/Settings.md#kruiz-control-settings">Kruiz Control settings</a> are correct.
+The following parameters are always available. Use the `_successful_` and `_unsuccessful_` parameters to test that the [Kruiz Control settings](/settings) are correct.
 
 
 | Parameter | Description |
