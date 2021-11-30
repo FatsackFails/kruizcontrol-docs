@@ -10,4 +10,3 @@ eleventyNavigation:
 ---
 
 TODO: list all the Docs subpages
-{{ collections.pages | eleventyNavigation("Docs") | eleventyNavigationToMarkdown }}
