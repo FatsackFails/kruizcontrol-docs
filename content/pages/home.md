@@ -2,7 +2,6 @@
 title: Meet Kruiz Control
 date: Last Modified
 slug: /
-toc: false
 eleventyNavigation:
   key: Getting Started
   order: 0
@@ -65,3 +64,5 @@ I do take commissions to implement custom functionality when necessary. Please r
 This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivs 4.0 Generic License</a>.
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
+
+***
