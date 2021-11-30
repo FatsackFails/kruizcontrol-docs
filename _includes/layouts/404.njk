@@ -4,13 +4,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
        {% set css %}
-    {% include "_includes/assets/css/404.css" %}
+    {% include "assets/css/404.css" %}
   {% endset %}
   <style>{{ css | cssmin | safe }}</style>
      {% set js %}
-    {% include "_includes/assets/js/404.js" %}
+    {% include "assets/js/404.js" %}
   {% endset %}
-  <script>{{ js | jsmin | safe }}</script> 
+  <script>{{ js | jsmin | safe }}</script>
 <div class="moon"></div>
 <div class="moon__crater moon__crater1"></div>
 <div class="moon__crater moon__crater2"></div>
@@ -45,11 +45,11 @@
   <div class="astronaut__foot-right"></div>
   <div class="astronaut__wrist-left"></div>
   <div class="astronaut__wrist-right"></div>
-  
+
   <div class="astronaut__cord">
     <canvas id="cord" height="500px" width="500px"></canvas>
   </div>
-  
+
   <div class="astronaut__head">
     <canvas id="visor" width="60px" height="60px"></canvas>
     <div class="astronaut__head-visor-flare1"></div>
