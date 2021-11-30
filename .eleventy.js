@@ -1,21 +1,32 @@
+// Global Config
+const config = require('./_data/site.json');
+
+// Utils
 const { DateTime } = require("luxon");
 const CleanCSS = require("clean-css");
-const UglifyJS = require("uglify-es");
 const htmlmin = require("html-minifier");
-const svgContents = require("eleventy-plugin-svg-contents");
-const mdIterator = require('markdown-it-for-inline')
-const embedEverything = require("eleventy-plugin-embed-everything");
-const pluginTOC = require('eleventy-plugin-nesting-toc');
-const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const Image = require("@11ty/eleventy-img");
+const UglifyJS = require("uglify-es");
+
+// 11ty Plugins
+const eleventyNavigation = require("@11ty/eleventy-navigation");
+const eleventyEmbedEverything = require("eleventy-plugin-embed-everything");
+const eleventyToc = require('eleventy-plugin-nesting-toc');
+const eleventySvgContents = require("eleventy-plugin-svg-contents");
+
 module.exports = function(eleventyConfig) {
-  // eleventyConfig.addPlugin(pluginTOC);
-  eleventyConfig.addPlugin(svgContents); 
-  eleventyConfig.addPlugin(embedEverything);
+
+  // Register 11ty plugins
+  eleventyConfig.addPlugin(eleventyEmbedEverything);
+  eleventyConfig.addPlugin(eleventyNavigation); // Eleventy Navigation https://www.11ty.dev/docs/plugins/navigation/
+  eleventyConfig.addPlugin(eleventyToc); // Nesting (Aside) TOC https://github.com/JordanShurmer/eleventy-plugin-nesting-toc
+  eleventyConfig.addPlugin(eleventySvgContents);
+
+  // Register Shortcodes
+  // Site Version
   eleventyConfig.addShortcode("version", function () {
     return String(Date.now());
   });
-
   // Responsive image shortcode
   eleventyConfig.addLiquidShortcode("image", async function(src, alt, sizes = "100vw") {
     if(alt === undefined) {
@@ -46,77 +57,29 @@ module.exports = function(eleventyConfig) {
       return `${picture}`;
 
   });
-
+  // Icon image
   eleventyConfig.addLiquidShortcode("icon", function(title,url) {
     return '<img class="icon" src="'+url+'" alt="'+title+'" />';
   });
 
-  // Button shortcode -- experimental
-  // eleventyConfig.addLiquidShortcode("button", function(title,url) {
-  //   return '<a class="button" href="'+url+'">'+title+'</a>';
-  // });
-
-
-  // Tailwind pass through and watch target
+  // Libraries: Tailwind & Alpine
+  // Tailwind passthrough and watch target
   eleventyConfig.addWatchTarget("./_tmp/style.css");
   eleventyConfig.addPassthroughCopy({ "./_tmp/style.css": "./style.css" });
-
-  // Alpine.js pass through
+  // Alpine.js passthrough
   eleventyConfig.addPassthroughCopy({
     "./node_modules/alpinejs/dist/alpine.js": "./js/alpine.js",
   });
-
-  // Eleventy Navigation https://www.11ty.dev/docs/plugins/navigation/
-  eleventyConfig.addPlugin(eleventyNavigationPlugin);
-
-  // Configuration API: use eleventyConfig.addLayoutAlias(from, to) to add
-  // layout aliases! Say you have a bunch of existing content using
-  // layout: post. If you don’t want to rewrite all of those values, just map
-  // post to a new file like this:
-  // eleventyConfig.addLayoutAlias("post", "layouts/my_new_post_layout.njk");
 
   // Merge data instead of overriding
   // https://www.11ty.dev/docs/data-deep-merge/
   eleventyConfig.setDataDeepMerge(true);
 
-  // Add support for maintenance-free post authors
-  // Adds an authors collection using the author key in our post frontmatter
-  // Thanks to @pdehaan: https://github.com/pdehaan
-  // eleventyConfig.addCollection("authors", collection => {
-  //   const blogs = collection.getFilteredByGlob("posts/*.md");
-  //   return blogs.reduce((coll, post) => {
-  //     const author = post.data.author;
-  //     if (!author) {
-  //       return coll;
-  //     }
-  //     if (!coll.hasOwnProperty(author)) {
-  //       coll[author] = [];
-  //     }
-  //     coll[author].push(post.data);
-  //     return coll;
-  //   }, {});
-  // });
-
+  // Collections
    // Creates custom collection "pages"
    eleventyConfig.addCollection("pages", function(collection) {
     return collection.getFilteredByGlob("pages/*.md");
    });
-
-   // Creates custom collection "posts"
-  //  eleventyConfig.addCollection("posts", function(collection) {
-  //   const coll = collection.getFilteredByGlob("posts/*.md");
-  
-  //   for(let i = 0; i < coll.length ; i++) {
-  //     const prevPost = coll[i-1];
-  //     const nextPost = coll[i + 1];
-  
-  //     coll[i].data["prevPost"] = prevPost;
-  //     coll[i].data["nextPost"] = nextPost;
-  //   }
-  
-  //   return coll;
-  // });
-    
 
    // Creates custom collection "results" for search
    const searchFilter = require("./filters/searchFilter");
@@ -124,7 +87,7 @@ module.exports = function(eleventyConfig) {
    eleventyConfig.addCollection("results", collection => {
     return [...collection.getFilteredByGlob("**/*.md")];
    });
-  
+
    // Creates custom collection "menuItems"
    eleventyConfig.addCollection("menuItems", collection =>
     collection
@@ -137,22 +100,22 @@ module.exports = function(eleventyConfig) {
       })
   );
 
+  // Filters
   // Date formatting (human readable)
   eleventyConfig.addFilter("readableDate", dateObj => {
     return DateTime.fromJSDate(dateObj).toFormat("LLL dd, yyyy");
   });
-
   // Date formatting (machine readable)
   eleventyConfig.addFilter("machineDate", dateObj => {
 
     return DateTime.fromJSDate(dateObj).toFormat("yyyy-MM-dd");
   });
 
+  // Output
   // Minify CSS
   eleventyConfig.addFilter("cssmin", function(code) {
     return new CleanCSS({}).minify(code).styles;
   });
-
   // Minify JS
   eleventyConfig.addFilter("jsmin", function(code) {
     let minified = UglifyJS.minify(code);
@@ -162,7 +125,6 @@ module.exports = function(eleventyConfig) {
     }
     return minified.code;
   });
-
   // Minify HTML output
   eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
     if (outputPath.indexOf(".html") > -1) {
@@ -181,41 +143,46 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("images/")
   eleventyConfig.addPassthroughCopy("content/images/")
   eleventyConfig.addPassthroughCopy("admin");
-  eleventyConfig.addPassthroughCopy("_includes/assets/");
-  eleventyConfig.addPassthroughCopy("_includes/experimental/");
+  eleventyConfig.addPassthroughCopy({"./_includes/assets/": "./assets/"});
 
   /* Markdown Plugins */
   let markdownIt = require("markdown-it");
+  let mdIterator = require('markdown-it-for-inline');
   let markdownItAnchor = require("markdown-it-anchor");
   let markdownItEmoji = require("markdown-it-emoji");
   let markdownItFootnote = require("markdown-it-footnote");
   let markdownItContainer = require("markdown-it-container");
-  let markdownLinkifyImages = require('markdown-it-linkify-images')
-  let markdownToc = require('markdown-it-table-of-contents')
-  let markdownItTasks = require('markdown-it-task-lists')
-  let markdownItAttrs = require("markdown-it-attrs")
-  let markdownItCenterText = require("markdown-it-center-text")
+  let markdownLinkifyImages = require('markdown-it-linkify-images');
+  let markdownToc = require('markdown-it-toc-done-right');
+  let markdownItTasks = require('markdown-it-task-lists');
+  let markdownItAttrs = require("markdown-it-attrs");
+  let markdownItCenterText = require("markdown-it-center-text");
   let options = {
     html: true,
     breaks: true,
     linkify: true,
     typographer: true
   };
-  let opts = {
-    // permalink: true,
-    // permalinkClass: "direct-link",
-    // permalinkSymbol: "#"
-  };
 
   eleventyConfig.setLibrary("md", markdownIt(options)
     .use(mdIterator, 'url_new_win', 'link_open', function (tokens, idx) {
       const [attrName, href] = tokens[idx].attrs.find(attr => attr[0] === 'href')
-      if (href && (!href.includes('franknoirot.co') && !href.startsWith('/') && !href.startsWith('#'))) {
+      if (href && (!href.includes(config.url) && !href.startsWith('/') && !href.startsWith('#'))) {
         tokens[idx].attrPush([ 'target', '_blank' ])
         tokens[idx].attrPush([ 'rel', 'noopener noreferrer' ])
       }
     })
-    .use(markdownItAnchor, opts)
+    .use(markdownToc, {
+      // https://www.npmjs.com/package/markdown-it-toc-done-right
+      "level": 2
+    })
+    .use(markdownItAnchor, {
+      // https://www.npmjs.com/package/markdown-it-anchor
+      permalink: true,
+      permalinkBefore: true,
+      permalinkClass: "direct-link",
+      permalinkSymbol: "#"
+    })
     .use(markdownItEmoji)
     .use(markdownItFootnote)
     .use(markdownItContainer, 'callout')
@@ -226,9 +193,11 @@ module.exports = function(eleventyConfig) {
     .use(markdownItTasks)
     .use(markdownItCenterText)
     .use(markdownLinkifyImages, {
+      // https://www.npmjs.com/package/markdown-it-linkify-images
       imgClass: "p-4",
     })
     .use(markdownItAttrs, {
+      // https://www.npmjs.com/package/markdown-it-attrs
       includeLevel: [2,3],
       listType: "ol"
     })

@@ -7,29 +7,8 @@ backend:
 
 media_folder: "static/img" # Media files will be stored in the repo under images/uploads
 
-# # Cloudinary
-# media_library:
-#   name: cloudinary
-#   config:
-#     cloud_name: broeker
-#     api_key: 159818251742281
-
 collections:
-  # Our blog posts
-  # - name: "blog" # Used in routes, e.g., /admin/collections/blog
-  #   label: "Post" # Used in the UI
-  #   folder: "posts" # The path to the folder where the documents are stored
-  #   create: true # Allow users to create new documents in this collection
-  #   slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-  #   fields: # The fields for each document, usually in front matter
-  #     - { label: "Title", name: "title", widget: "string" }
-  #     - { label: "Publish Date", name: "date", widget: "datetime" }
-  #     - { label: "Author", name: "author", widget: "string", default: "Anonymous" }
-  #     - { label: "Summary", name: "summary", widget: "text" }
-  #     - { label: "Tags", name: "tags", widget: "list", default: ["post"] }
-  #     - { label: "Body", name: "body", widget: "markdown" }
-  # Our pages e.g. About
-  - name: "pages"
+  - name: "pages" # Our pages e.g. About
     label: "Page"
     folder: "pages"
     create: true # Change to true to allow editors to create new pages
@@ -62,6 +41,7 @@ collections:
           - {label: "Site Url", name: "url", widget: "string"}
           - {label: "Github Url", name: "githubUrl", widget: "string"}
           - {label: "Github branch", name: "githubBranch", widget: "string"}
+          - {label: "Enable page navigation", name: "enablePageNavigation", widget: "boolean", default: false}
           - {label: "Navigation style", name: "navigationStyle", widget: "string"}
           - {label: "Site emoji", name: "emoji", widget: "string", required: false}
           - {label: "Enable search", name: "enableSearch", widget: "boolean"}
@@ -69,8 +49,5 @@ collections:
           - {label: "Enable edit button", name: "enableEditButton", widget: "boolean"}
           - {label: "Enable datestamp", name: "enableDatestamp", widget: "boolean"}
           - {label: "Enable Github link", name: "enableGithubLink", widget: "boolean"}
-          - {label: "Enable contact form", name: "enableContact", widget: "boolean"}
-          - {label: "Enable Netlify CMS", name: "enableNetlifyCMS", widget: "boolean", default: false}
-          - {label: "Enable comments", name: "enableComments", widget: "boolean", default: false}
-          - {label: "Enable encryption", name: "enableEncryption", widget: "boolean", default: false}
-          - {label: "Enable page navigation", name: "enablePageNavigation", widget: "boolean", default: false}
+          - {label: "Enable Netlify CMS", name: "enableNetlifyCMS", widget: "boolean", default: false}          
+          - {label: "Enable TOC Sidebar", name: "enableTOC", widget: "boolean", default: true}
