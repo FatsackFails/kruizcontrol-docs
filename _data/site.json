@@ -23,5 +23,5 @@
   "enableSearch": true,
   "enableDarkMode": true,
   "enableDatestamp": true,
-  "enableNetlifyCMS": true
+  "enableNetlifyCMS": false
 }
