@@ -4,7 +4,7 @@ date: Last Modified
 slug: settings
 eleventyNavigation:
   key: Settings
-  order: 2
+  order: 50
   title: Settings
 ---
 
