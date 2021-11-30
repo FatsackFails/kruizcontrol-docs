@@ -1,5 +1,5 @@
 ---
-title: Meet Kruiz Control
+title: Getting Started with Kruiz Control
 date: Last Modified
 slug: /
 eleventyNavigation:
