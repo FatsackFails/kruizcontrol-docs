@@ -16,7 +16,7 @@
             <a href="/" class="font-semibold text-gray-500 dark:text-white">{{ site.name }}</a>
             <p class="text-sm text-gray-500 dark:text-white pt-2">{{ site.subtitle }}</p>
           </div>
-          <hr class="py-2" />
+          <hr class="md:hidden py-2" />
           {{ collections.all | eleventyNavigation | eleventyNavigationToHtml({anchorClass: "item",activeAnchorClass: "active",activeListItemClass: "active",activeKey: eleventyNavigation.key, listClass: "nav", listItemClass: "item"}) | safe }}
         </div>
       </nav>
