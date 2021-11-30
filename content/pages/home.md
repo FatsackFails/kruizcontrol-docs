@@ -1,9 +1,10 @@
 ---
 title: Hello, world.
-date: Last Modified 
-permalink: /
+date: Last Modified
+slug: /
+toc: false
 eleventyNavigation:
-  key: Hello 
+  key: Hello
   order: 0
   title: Hello, world.
 ---
@@ -12,6 +13,3 @@ You have successfully launched your spacebook. If you are new here, you may want
 ![Hello, world](/content/images/hello.jpg)
 
 ->*Onward...*<-
-
-
-
