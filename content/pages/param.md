@@ -28,7 +28,7 @@ None at the moment.
 #### Parameters
 | | |
 ------------ | -------------
-**\<name\>** | The updated parameter value where **\<name\>** is the name of the parameter.
+**\<parameter\>** | The lowercased parameter value where **\<parameter\>** is the name of the parameter.
 
 ***
 
@@ -43,6 +43,20 @@ None at the moment.
 | | |
 ------------ | -------------
 **\<new\>** | The new parameter value where **\<new\>** is the name of the parameter.
+
+***
+
+### Param Create
+| | |
+------------ | -------------
+**Info** | Create a new parameter. `<parameter>` is the name of the new parameter to create. `<value>` is the initial value for the parameter.
+**Format** | `Param Create <parameter> <value>`
+**Example** | `Param Create Counter 0`
+
+#### Parameters
+| | |
+------------ | -------------
+**\<parameter\>** | The new parameter value where **\<parameter\>** is the name of the parameter.
 
 ***
 
@@ -89,6 +103,20 @@ None at the moment.
 | | |
 ------------ | -------------
 **\<parameter\>** | The lowercased parameter value where **\<parameter\>** is the name of the parameter.
+
+***
+
+### Param Negate
+| | |
+------------ | -------------
+**Info** | Negates the value within the parameter. The parameter value is converted into a string and lowercased. `"false"`, `"0"`, `"no"`, and `""` are interpreted as `false`. Everything else is interpreted as `true`. `<parameter>` is the name of the existing parameter.
+**Format** | `Param Negate <parameter>`
+**Example** | `Param Negate MyToggle`
+
+#### Parameters
+| | |
+------------ | -------------
+**\<parameter\>** | The negated parameter value where **\<parameter\>** is the name of the parameter.
 
 ***
 

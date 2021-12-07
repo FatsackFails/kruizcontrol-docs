@@ -161,6 +161,15 @@ The `<optional_skip>` value allows you to specify the number of lines to skip if
 
 ***
 
+### Play Stop
+| | |
+------------ | -------------
+**Info** | Used to stop all sounds that are currently playing in Kruiz Control with `Play`.
+**Format** | `Play Stop`
+**Example** | `Play Stop`
+
+***
+
 ### Reset
 | | |
 ------------ | -------------

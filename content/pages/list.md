@@ -105,6 +105,15 @@ _Note: The above example, `List Export MyList`, would return the parameter **MyL
 
 ***
 
+### List Global
+| | |
+------------ | -------------
+**Info** | Designates a list as global so that it will persist between sessions (i.e. the list remains after a reset). `<on/off>` determines whether to make the list global (`on`) or remove it as a global list (`off`).
+**Format** | `List Global <list> <on/off>`
+**Example** | `List Global MyList on`
+
+***
+
 ### List Import
 | | |
 ------------ | -------------
