@@ -30,22 +30,6 @@ Enables the ability to trigger actions based on StreamElement alerts. Note that 
 
 ***
 
-### OnSETwitchBulkGiftSub
-| | |
------------- | -------------
-**Info** | Used to trigger actions when someone gifts multiple subscriptions to the community.
-**Format** | `OnSETwitchBulkGiftSub`
-**Example** | `OnSETwitchBulkGiftSub`
-
-#### Parameters
-| | |
------------- | -------------
-**user** | The user that gifted the subscriptions.
-**amount** | The number of subscriptions the user is gifted.
-**data** | The complete json message (for use with [Function](#function)).
-
-***
-
 ### OnSEDonation
 | | |
 ------------ | -------------

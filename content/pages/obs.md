@@ -147,6 +147,64 @@ Enables the ability to interact with and respond to OBS.
 **is_active** | [true/false] `true` if the source is active. Otherwise, `false`.
 
 ***
+### OBS Media Duration
+| | |
+------------ | -------------
+**Info** | Used to retrieve the duration of a media source. `<source>` is the name of the source.
+**Format** | `OBS Media Duration <source>`
+**Example** | `OBS Media Duration AlertVideo`
+
+#### Parameters
+| | |
+------------ | -------------
+**duration** | The duration of the file in seconds.
+
+***
+
+### OBS Media Path
+| | |
+------------ | -------------
+**Info** | Used to set the file path of a media source. `<source>` is the name of the source. `<path>` is the absolute path to the file.
+**Format** | `OBS Media Path <source> <path>`
+**Example** | `OBS Media Path AlertVideo "C:/Users/YOUR_USER_NAME/Stream/alert.webm"`
+
+***
+
+### OBS Media Pause
+| | |
+------------ | -------------
+**Info** | Used to pause a media source. `<source>` is the name of the source.
+**Format** | `OBS Media Pause <source>`
+**Example** | `OBS Media Pause AlertVideo`
+
+***
+
+### OBS Media Play
+| | |
+------------ | -------------
+**Info** | Used to play a media source. `<source>` is the name of the source.
+**Format** | `OBS Media Play <source>`
+**Example** | `OBS Media Play AlertVideo`
+
+***
+
+### OBS Media Restart
+| | |
+------------ | -------------
+**Info** | Used to restart a media source. `<source>` is the name of the source.
+**Format** | `OBS Media Restart <source>`
+**Example** | `OBS Media Restart AlertVideo`
+
+***
+
+### OBS Media Stop
+| | |
+------------ | -------------
+**Info** | Used to stop a media source. `<source>` is the name of the source.
+**Format** | `OBS Media Stop <source>`
+**Example** | `OBS Media Stop AlertVideo`
+
+***
 
 ### OBS Mute
 | | |

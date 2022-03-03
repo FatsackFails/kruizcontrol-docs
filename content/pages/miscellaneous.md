@@ -44,26 +44,6 @@ A small selection of actions that are included for increased usability.
 
 ***
 
-### Cooldown Check
-| | |
------------- | -------------
-**Info** | Used to check if a cooldown is active. `<name>` is the identifier for the cooldown.
-**Format** | `Cooldown Check <name>`
-**Example** | `Cooldown Check MyCustomTrigger`
-
-#### Parameters
-| | |
------------- | -------------
-**\<name\>** | [True/False] Whether or not the cooldown is active where **\<name\>** is the name of the cooldown.
-**cooldown** | The number of seconds (rounded to a whole number) left on the cooldown. This is only returned if the cooldown is active (`<name>` is True).
-**cooldown_real** | The decimal number of seconds left on the cooldown. This is only returned if the cooldown is active (`<name>` is True).
-
-::: callout
-**Note:** The above example, `Cooldown Check MyCustomTrigger`, would return the parameter **MyCustomTrigger**.
-:::
-
-***
-
 ### Delay
 | | |
 ------------ | -------------

@@ -1,17 +1,17 @@
 ---
-title: Actions
+title: Action
 date: Last Modified
-slug: actions
+slug: action
 eleventyNavigation:
-  key: Actions
+  key: Action
   order: 103
-  title: Actions
+  title: Action
   parent: Docs
 ---
 
 Enables the ability to create your own actions within Kruiz Control.
 
-## Actions Triggers
+## Action Triggers
 
 ### OnAction
 | | |
@@ -27,7 +27,14 @@ Enables the ability to create your own actions within Kruiz Control.
 
 ***
 
-## Actions Actions
-None at the moment.
+### Action Actions
+
+#### Action
+| | |
+------------ | -------------
+**Info** | Used to run an action by passing it through. This allows actions to be fired dynamically within an event. `<action>` is the full action that you want to complete. The action can be provided as a single argument (inside of quotes) or written out normally.
+**Format** | `Action <action>`
+**Example** | `Action Chat Send "Hello world"`
+**Example w/ single argument** | `Action "Chat Send 'Hello world'"`
 
 ***
