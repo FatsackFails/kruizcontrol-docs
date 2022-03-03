@@ -27,7 +27,7 @@ Enables the ability to create your own actions within Kruiz Control.
 
 ***
 
-### Action Actions
+## Action Actions
 
 #### Action
 | | |
